@@ -4,7 +4,25 @@
     "web": {
       "bundler": "metro"
     },
-    "name": "leethub-2",
-    "slug": "leethub-2"
+    "name": "leethub-0.1",
+    "slug": "leethub-0-1",
+    "notification": {
+      "icon": "./assets/leet_logo_2.png"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/leet_logo_2.png",
+          "color": "#BFCCB5"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1c86937c-83b6-43d9-900b-1c5233fcf754"
+      }
+    },
+    "owner": "pete1302"
   }
 }
