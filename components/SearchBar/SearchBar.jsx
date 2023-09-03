@@ -13,9 +13,7 @@ import {
   ActivityIndicator,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-// import { useRouter } from "expo-router";
-// import { userNameValid } from "../../util/backend";
-// import { reLoadUsers } from "../UserList/UserList";
+ 
 
 const SearchBar = ({ refresh, setRefresh }) => {
   const [userName, onChangeText] = useState("");
@@ -49,8 +47,7 @@ const SearchBar = ({ refresh, setRefresh }) => {
     };
 
     try {
-      // setIsLoading(true);
-      const response = await fetch(
+       const response = await fetch(
         "https://leetcode.com/graphql/votrubac",
         requestOptions
       );
@@ -59,8 +56,7 @@ const SearchBar = ({ refresh, setRefresh }) => {
     } catch (error) {
       console.error(e);
     } finally {
-      // setIsLoading(false);
-    }
+     }
     return json;
   };
   const appendUserList = async (userName, userData) => {
@@ -71,18 +67,16 @@ const SearchBar = ({ refresh, setRefresh }) => {
       if (value !== null) {
         // existing
         console.log("existing---");
-        // const jsonData = JSON.parse(value);
-        jsonData = value;
+         jsonData = value;
         console.log(jsonData);
         list = jsonData;
-        // return value;
-      } else {
+       } else {
         console.log("initial---");
         const jsonTemplate = JSON.stringify({ userData: {} });
         list = jsonTemplate;
       }
     } catch (e) {
-      // error reading value
+      
       console.log(e);
       alert("error ");
       return null;
@@ -92,8 +86,7 @@ const SearchBar = ({ refresh, setRefresh }) => {
     var json = null;
     try {
       json = JSON.parse(list);
-      // const json = list;
-      console.log(json["userData"]);
+       console.log(json["userData"]);
       json["userData"][userName] = userData;
     } catch (e) {
       console.log(e, "in BIO updt");
@@ -134,11 +127,7 @@ const SearchBar = ({ refresh, setRefresh }) => {
     var myHeaders = new Headers();
     myHeaders.append("referer", "https://leetcode.com/%s/votrubac");
     myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append(
-    //   'Cookie',
-    //   'csrftoken=2fh1J8fR3kqtgbptItZQ3tw7I92UAXxmW5VWQ5H5RkqLdEn83OI9Kn5IMCgrRz4Z'
-    // );
-
+ 
     var graphql = JSON.stringify({
       query:
         "query getUserProfile($username: String!) {matchedUser(username: $username) {profile { realName}} } ",
@@ -196,26 +185,6 @@ const SearchBar = ({ refresh, setRefresh }) => {
         <Text>USED ADD</Text>
       </TouchableOpacity>
     </View>
-  //   <View style={styles.searchContainer}>
-  //   <View style={styles.searchWrapper}>
-  //   <Text>SearchBar</Text>
-  //     {isLoading ? <ActivityIndicator /> : null}
-  //     <TextInput
-  //       style={styles.searchInput}
-  //       value={userName}
-  //       // onChangeText={(text) => setSearchTerm(text)}
-  //       placeholder="username"
-  //     />
-  //   </View>
-
-  //   <TouchableOpacity style={styles.searchBtn} onPress={addUser}>
-  //     <Image
-  //       // source={icons.search}
-  //       resizeMode="contain"
-  //       style={styles.searchBtnImage}
-  //     />
-  //   </TouchableOpacity>
-  // </View>
   );
 };
 
@@ -234,61 +203,5 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
 });
-
-// const styles = StyleSheet.create({
-//   container: {
-//     width: "100%",
-//   },
-//   userName: {
-//     fontFamily: FONT.regular,
-//     fontSize: SIZES.large,
-//     color: COLORS.secondary,
-//   },
-//   welcomeMessage: {
-//     fontFamily: FONT.bold,
-//     fontSize: SIZES.xLarge,
-//     color: COLORS.primary,
-//     marginTop: 2,
-//   },
-//   searchContainer: {
-//     justifyContent: "center",
-//     alignItems: "center",
-//     flexDirection: "row",
-//     marginTop: SIZES.large,
-//     height: 50,
-//   },
-//   searchWrapper: {
-//     flex: 1,
-//     backgroundColor: COLORS.white,
-//     marginRight: SIZES.small,
-//     justifyContent: "center",
-//     alignItems: "center",
-//     borderRadius: SIZES.medium,
-//     height: "100%",
-//   },
-//   searchInput: {
-//     fontFamily: FONT.regular,
-//     width: "100%",
-//     height: "100%",
-//     paddingHorizontal: SIZES.medium,
-//   },
-//   searchBtn: {
-//     width: 50,
-//     height: "100%",
-//     backgroundColor: COLORS.tertiary,
-//     borderRadius: SIZES.medium,
-//     justifyContent: "center",
-//     alignItems: "center",
-//   },
-//   searchBtnImage: {
-//     width: "50%",
-//     height: "50%",
-//     tintColor: COLORS.white,
-//   },
-//   tabsContainer: {
-//     width: "100%",
-//     marginTop: SIZES.medium,
-//   }
-// });
 
 export default SearchBar;
