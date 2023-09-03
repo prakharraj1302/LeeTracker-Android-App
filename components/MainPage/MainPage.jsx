@@ -22,29 +22,15 @@ const MainPage = ({}) => {
     loadUserData();
   }, []);
 
-  //   const updateUserData(){
-
-  //   }
-
   const loadUserData = () => {
     const userListRaw =
       '{"userData":{"prakharraj1302":{"realName":"PrakharRajPandey","userAvatar":"https://assets.leetcode.com/users/avatars/avatar_1647532784.png","notifStatus":true},"gauravgarwa":{"realName":"GauravGarwa","userAvatar":"https://assets.leetcode.com/users/avatars/avatar_1673192364.png","notifStatus":true},"votrubac":{"realName":"Vlad","userAvatar":"https://assets.leetcode.com/users/votrubac/avatar_1610271695.png","notifStatus":true},"user7519am":{"realName":"","userAvatar":"https://assets.leetcode.com/users/avatars/avatar_1680455541.png","notifStatus":true}}}';
 
     var userList = JSON.parse(userListRaw);
     uiList = [];
-    // console.log('list - ', userList);
-    // userList = [userList['userData']];
-    // console.log('arraed - ', userList);
-
-    // for (user in userList[0]) {
-    //   // "vorurasad":{/
-    //   console.log(user);
-    //   user = { user };
-    // }
-    // console.log('obj - ', userList);
+ 
     var user = userList["userData"];
-    // var uiList = [];
-
+ 
     for (u in user) {
       var ele = {
         userName: u,
@@ -56,8 +42,8 @@ const MainPage = ({}) => {
     }
     setUserData(uiList);
 
-    // setRefreshing(false);
-  };
+   };
+  
   const loadUserData2 = async () => {
     const json = await getUsers();
     copy = [];
@@ -75,25 +61,15 @@ const MainPage = ({}) => {
     }
     setUserData(copy);
   };
+
+  // user data
   const loadUser1 = () => {
     const userListRaw =
       '{"userData":{"prakharraj1302":{"realName":"PrakharRajPandey","userAvatar":"https://assets.leetcode.com/users/avatars/avatar_1647532784.png","notifStatus":true},"gauravgarwa":{"realName":"GauravGarwa","userAvatar":"https://assets.leetcode.com/users/avatars/avatar_1673192364.png","notifStatus":true},"votrubac":{"realName":"Vlad","userAvatar":"https://assets.leetcode.com/users/votrubac/avatar_1610271695.png","notifStatus":true},"user7519am":{"realName":"","userAvatar":"https://assets.leetcode.com/users/avatars/avatar_1680455541.png","notifStatus":true}}}';
 
     var userList = JSON.parse(userListRaw);
-    uiList = [];
-    // console.log('list - ', userList);
-    // userList = [userList['userData']];
-    // console.log('arraed - ', userList);
-
-    // for (user in userList[0]) {
-    //   // "vorurasad":{/
-    //   console.log(user);
-    //   user = { user };
-    // }
-    // console.log('obj - ', userList);
     var user = userList["userData"];
-    // var uiList = [];
-
+ 
     for (u in user) {
       var ele = {
         userName: u,
@@ -104,27 +80,16 @@ const MainPage = ({}) => {
     }
     setUserData(uiList);
 
-    // setRefreshing(false);
-  };
+   };
   const loadUser2 = () => {
     const userListRaw =
       '{"userData":{"gauravgarwa":{"realName":"GauravGarwa","userAvatar":"https://assets.leetcode.com/users/avatars/avatar_1673192364.png","notifStatus":true},"votrubac":{"realName":"Vlad","userAvatar":"https://assets.leetcode.com/users/votrubac/avatar_1610271695.png","notifStatus":true},"user7519am":{"realName":"","userAvatar":"https://assets.leetcode.com/users/avatars/avatar_1680455541.png","notifStatus":true}}}';
 
     var userList = JSON.parse(userListRaw);
     uiList = [];
-    // console.log('list - ', userList);
-    // userList = [userList['userData']];
-    // console.log('arraed - ', userList);
-
-    // for (user in userList[0]) {
-    //   // "vorurasad":{/
-    //   console.log(user);
-    //   user = { user };
-    // }
-    // console.log('obj - ', userList);
+ 
     var user = userList["userData"];
-    // var uiList = [];
-
+ 
     for (u in user) {
       var ele = {
         userName: u,
@@ -135,8 +100,7 @@ const MainPage = ({}) => {
     }
     setUserData(uiList);
 
-    // setRefreshing(false);
-  };
+   };
   function toggleNotif(userName) {
     console.log("Toggle", userName);
     copy = [];
@@ -162,21 +126,12 @@ const MainPage = ({}) => {
       console.log("ERROR IN DELETION", e);
     }
 
-    // try {
-    //   // updateListUI();
-    // } catch (e) {
-    //   console.log('ERROR IN UI LIST UPDATION ', e);
-    // }
-    // loadUserData();
     copy = [];
     for (u in userData) {
       if (userData[u].userName != userName) {
         copy.push(userData[u]);
       }
     }
-
-    // console.log("AFTER", copy);
-    // setRefreshing(true);
 
     setUserData(copy);
   }
@@ -215,16 +170,15 @@ const MainPage = ({}) => {
       <FlatList
         data={userData}
         keyExtractor={(item, index) => index.toString()}
-        // ItemSeparatorComponent={ItemSeparatorView}
-        enableEmptySections={true}
+         enableEmptySections={true}
         renderItem={ItemView}
-        // refreshControl={
-        //   <RefreshControl refreshing={refreshing} onRefresh={loadUserData} />
-        // }
+ 
       />
     </View>
   );
 };
+
+// styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
