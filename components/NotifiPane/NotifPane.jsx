@@ -1,4 +1,11 @@
+import * as React from "react";
 import { useState, useEffect, useRef } from "react";
+import { toggleFetchTask, checkStatusAsync } from "../../util/job";
+import Constants from "expo-constants";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import * as BackgroundFetch from "expo-background-fetch";
+import * as TaskManager from "expo-task-manager";
+import * as Notifications from "expo-notifications";
 import {
   View,
   Text,
@@ -12,16 +19,6 @@ import {
   ToastAndroid,
   ActivityIndicator,
 } from "react-native";
-import { toggleFetchTask, checkStatusAsync } from "../../util/job";
-import * as React from "react";
-// import { useState, useEffect, useRef } from "react";
-
-import Constants from "expo-constants";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import * as BackgroundFetch from "expo-background-fetch";
-import * as TaskManager from "expo-task-manager";
-
-import * as Notifications from "expo-notifications";
 
 const NotifPane = ({ isActive, setActive }) => {
   function showToast(msg) {
@@ -49,17 +46,12 @@ const NotifPane = ({ isActive, setActive }) => {
   // Note: This needs to be called in the global scope (e.g outside of your React components
   TaskManager.defineTask(BACKGROUND_FETCH_TASK, async () => {
     const now = Date.now();
-    // async () => {
-    // await getData();
+ 
     await getNotifList();
-    // }
-    // alert('background');
-
+ 
     console.log(
       `Got background fetch call at date: ${new Date(now).toISOString()}`
     );
-
-    // Be sure to return the successful result type!
     return BackgroundFetch.BackgroundFetchResult.NewData;
   });
 
@@ -67,16 +59,7 @@ const NotifPane = ({ isActive, setActive }) => {
   // Note: This needs to be called in the global scope (e.g outside of your React components)
   TaskManager.defineTask(BACKGROUND_FETCH_TASK, async () => {
     const now = Date.now();
-    // async () => {
-    // await getData();
-    // await getNotifList();
-    // }
-    // alert('background');
-
-    // ---------
-    //TODO
-    // try blk
-    //   update data
+ 
     try {
       await updateRoutine();
       // await scheludeNotification();
@@ -85,10 +68,7 @@ const NotifPane = ({ isActive, setActive }) => {
       console.log("BK TASK ERR-", e);
     }
 
-    //   then
-    //   scheludeNotification
-    //   then
-    //   show notif
+ 
 
     // ---------
 
@@ -160,7 +140,6 @@ const NotifPane = ({ isActive, setActive }) => {
       content: {
         title: `👤 ${data["realName"]}`,
         body: `Latest 🗞️ ${data["title"]} \n Today's #️⃣ ${data["subb"]}`,
-        // body: {JSON.stringify(data)},
         data: { data: data["subb"] },
       },
       trigger: { seconds: 1 },
@@ -178,8 +157,7 @@ const NotifPane = ({ isActive, setActive }) => {
     checkStatusAsync();
   };
   const checkStatusAsync = async () => {
-    // const status = await BackgroundFetch.getStatusAsync();
-    const isActive = await TaskManager.isTaskRegisteredAsync(
+     const isActive = await TaskManager.isTaskRegisteredAsync(
       BACKGROUND_FETCH_TASK
     );
     console.log(isActive);
@@ -232,12 +210,10 @@ const NotifPane = ({ isActive, setActive }) => {
         const jsonData = JSON.parse(value);
         subbData = jsonData;
         console.log("UserSubbList -", jsonData);
-        // list = jsonData;
-        return value;
+         return value;
       }
     } catch (e) {
-      // error reading value
-      console.log(e);
+       console.log(e);
       alert("error ");
       return null;
     }
@@ -252,12 +228,10 @@ const NotifPane = ({ isActive, setActive }) => {
         const jsonData = JSON.parse(value);
         userData = jsonData;
         console.log("UserList -", jsonData);
-        // list = jsonData;
-        // return value;
+   
       }
     } catch (e) {
-      // error reading value
-      console.log(e);
+       console.log(e);
       alert("error ");
       return null;
     }
@@ -304,12 +278,10 @@ const NotifPane = ({ isActive, setActive }) => {
       return null;
     }
     if (response !== null) {
-      // const json = JSON.parse(response);
-      json = response;
+       json = response;
       const calendar =
         json["data"]["matchedUser"]["userCalendar"]["submissionCalendar"];
-      // console.log(calendar);
-      userCalendar = calendar;
+       userCalendar = calendar;
     } else {
       console.log("resposne null");
       return null;
@@ -539,8 +511,7 @@ const NotifPane = ({ isActive, setActive }) => {
       }
     } catch (e) {
       console.log(e);
-      // alert("error fetching time");
-      return null;
+       return null;
     }
   };
 
@@ -551,8 +522,7 @@ const NotifPane = ({ isActive, setActive }) => {
       await AsyncStorage.setItem("@FetchUnix", jsonTime);
       console.log("SAVED TIME", jsonTime);
     } catch (e) {
-      // saving error
-      console.log("UNIX SAVING ERR", e);
+       console.log("UNIX SAVING ERR", e);
     }
   };
 
@@ -565,8 +535,7 @@ const NotifPane = ({ isActive, setActive }) => {
       var userData = await getUsers();
       console.log(userSubbList);
       console.log(userData);
-      // const userTotalSubbToday = await get;
-
+ 
       if (
         userSubbList === null ||
         userData === null ||
@@ -594,8 +563,7 @@ const NotifPane = ({ isActive, setActive }) => {
           const titleSlug = userSubbList["userSubbList"][user]["titleSlug"];
           const timestamp = userSubbList["userSubbList"][user]["timestamp"];
 
-            // 1680757006;
-
+ 
           if (notify) {
             console.log("notif", user);
             if (timestamp > lastUnix) {
@@ -615,9 +583,7 @@ const NotifPane = ({ isActive, setActive }) => {
           } else {
             console.log("no update");
           }
-          // "title": "Search Insert Position",
-          // "titleSlug": "search-insert-position",
-          // "timestamp": "1680614162",
+  
         }
       } catch (e) {
         console.log("ERRROR ", e);
@@ -658,11 +624,9 @@ const NotifPane = ({ isActive, setActive }) => {
             }
             console.log("Done.");
           };
-          //   checkStatusAsync();
-          // toggleFetchTask();
+   
 
-          // setActive((isActive) => !isActive);
-        }}
+         }}
       >
         <Text>NULL KESY</Text>
       </TouchableOpacity>
