@@ -9,7 +9,6 @@ import * as TaskManager from "expo-task-manager";
 
 import * as Notifications from "expo-notifications";
 
-// const [userList, getUserList] = useState("");
 const gaurav = "gauravgarwa";
 const vlad = "votrubac";
 const demoId = "user7519am";
