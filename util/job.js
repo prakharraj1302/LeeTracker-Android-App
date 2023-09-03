@@ -22,12 +22,9 @@ const BACKGROUND_FETCH_TASK = "background-fetch";
 // Note: This needs to be called in the global scope (e.g outside of your React components
 TaskManager.defineTask(BACKGROUND_FETCH_TASK, async () => {
   const now = Date.now();
-  // async () => {
-  // await getData();
+ 
   await getNotifList();
-  // }
-  // alert('background');
-
+ 
   console.log(
     `Got background fetch call at date: ${new Date(now).toISOString()}`
   );
@@ -40,16 +37,7 @@ TaskManager.defineTask(BACKGROUND_FETCH_TASK, async () => {
 // Note: This needs to be called in the global scope (e.g outside of your React components)
 TaskManager.defineTask(BACKGROUND_FETCH_TASK, async () => {
   const now = Date.now();
-  // async () => {
-  // await getData();
-  // await getNotifList();
-  // }
-  // alert('background');
-
-  // ---------
-  //TODO
-  // try blk
-  //   update data
+ 
   try {
     await updateRoutine();
     // await scheludeNotification();
@@ -57,11 +45,7 @@ TaskManager.defineTask(BACKGROUND_FETCH_TASK, async () => {
   } catch (e) {
     console.log("BK TASK ERR-", e);
   }
-
-  //   then
-  //   scheludeNotification
-  //   then
-  //   show notif
+ 
 
   // ---------
 
@@ -286,9 +270,7 @@ const scheludeNotification = async () => {
     } else {
         console.log("no update");
     }
-    // "title": "Search Insert Position",
-    // "titleSlug": "search-insert-position",
-    // "timestamp": "1680614162",
+ 
 }
 } catch (e) {
     console.log("ERRROR ", e);
@@ -301,7 +283,6 @@ const scheludeNotification = async () => {
 console.log("NOTF LIST- ", notifJson);
 return notifJson;
 //------------
-  // const
 };
 //-------------------------//-------------------------//-------------------------
 
