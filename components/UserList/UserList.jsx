@@ -14,31 +14,18 @@ import {
   SafeAreaView,
   TouchableWithoutFeedback,
 } from "react-native";
-// import { useRouter } from "expo-router";
-// import { getUsers } from "../../util/backend";
-// import userDataLoad from "../../util/userDataLoad";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-// import { ScrollView } from "react-native-gesture-handler";
-// import { userDataLoad, deleteUser } from "../../util/userDataLoad";
 
-// const reLoadUsers = () => {
-//   setIsLoading(true);
-//   loadUsers();
-// };
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 const UserList = ({ refresh, setRefresh }) => {
-  // console.log("LOADING DATA");
-  const [isLoading, setIsLoading] = useState(false);
+   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState(null);
   const [counter, update] = useState(0);
-  //   const { data, isLoading } = userDataLoad();
-  //   const [data, setData] = useState(null);
-  //   const [isLoading, setLoading] = useState(false);
-  //   const userDataLoad = () => {
+  
 
   //-------------//-------------//-------------//-------------//-------------
   function deleteUser(userName) {
-    // console.log("BEFORE", data);
-
+ 
     copy = [];
     for (u in data) {
       if (data[u].userName != userName) {
@@ -64,9 +51,7 @@ const UserList = ({ refresh, setRefresh }) => {
     }
     console.log(copy);
     setData(copy);
-    // updateListUI();
-
-    // reLoadUsers()
+ 
   }
 
   const loadUsers = async () => {
@@ -116,10 +101,6 @@ const UserList = ({ refresh, setRefresh }) => {
     var uiList = data;
     var newJson = { userData: {} };
 
-    // for (u in uiList) {
-    //   console.log(u);
-    //   // newJson['userData'][u[userName]] = {realName : realName , userAvatar: userAvatar}
-    // }
     if(uiList != null){
       for (i = 0; i < uiList.length; i++) {
         console.log(uiList[i]);
@@ -167,17 +148,14 @@ const UserList = ({ refresh, setRefresh }) => {
     // })
   };
 
-  // return { data, isLoading, reLoadUsers };
-  //   };
-
+ 
   const ItemView = ({ item }) => (
     // <View style={styles.item}>
     <TouchableWithoutFeedback>
       <View style={styles.item}>
         <Text style={styles.title}>{item.realName}</Text>
         <Text style={styles.subTitle}>{item.userName}</Text>
-        {/* {item.notifStatus ? <Text>YES</Text> : <Text>NO</Text>} */}
-        <Button
+         <Button
           onPress={() => {
             console.log(item.userName);
             deleteUser(item.userName);
@@ -197,31 +175,25 @@ const UserList = ({ refresh, setRefresh }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <ScrollView> */}
-      <Text>----USERLIST------</Text>
+       <Text>----USERLIST------</Text>
       <TouchableOpacity onPress={reLoadUsers}>
         <Text>REFRESH</Text>
       </TouchableOpacity>
       {isLoading ? (
         <ActivityIndicator />
       ) : (
-        // <ScrollView>
-        <FlatList
+         <FlatList
           data={data}
           keyExtractor={(item, index) => index.toString()}
           enableEmptySections={true}
           renderItem={ItemView}
         />
-        // {/* </ScrollView> */}
-      )}
-      {/* </ScrollView> */}
-    </SafeAreaView>
+       )}
+     </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // flexGrow :1,
     marginTop: StatusBar.currentHeight || 0,
   },
   item: {
