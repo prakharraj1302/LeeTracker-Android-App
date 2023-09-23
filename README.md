@@ -34,13 +34,12 @@ LeetCode Friends Tracker is an Android app designed to enhance your coding pract
 - **Engaging User Interface**: A user-friendly interface with Material Design elements ensures an intuitive and enjoyable user experience.
 
 ## Installation
-
-1. Download the app: https://play.google.com/store/apps/details?id=com.pete1302.leethub01 
+- Download the app: https://play.google.com/store/apps/details?id=com.pete1302.leethub01 
 
 
 ## Usage
 
--  To add a new user Enter the username and click "Add."
+- To add a new user Enter the username and click "Add."
 - The list will display the entered username if it exists.
 - To enable/disable app notifications, use the 'Notification
 ON/OFF' button.
