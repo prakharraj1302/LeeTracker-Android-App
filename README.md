@@ -10,7 +10,7 @@
 - [Usage](#Usage)
 - [TechStack](#TechStack)
 - [Contributors ](#Contributors)
-- [Feedback](#Feedback)
+- [Feedback](#Feedback-and-Contributions)
 
 
 
@@ -56,7 +56,7 @@ ON/OFF' button.
 - [Prakhar Raj](https://github.com/prakharraj1302)
 - [Gaurav Garwa](https://github.com/gaurav1832)
 
-## Feedback and Contributions
+## Feedback-and-Contributions
 
 We welcome feedback and contributions to improve this app. If you encounter any issues, have ideas for enhancements, or want to contribute to the project, please create an issue or a pull request.
 
