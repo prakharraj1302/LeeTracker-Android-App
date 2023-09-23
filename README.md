@@ -1,5 +1,6 @@
 # LeeTracker Android App
 
+<img width="255" alt="leet-logo-removebg-preview" src="https://github.com/prakharraj1302/LeeTracker-Android-App/assets/78600377/42ad8be9-2bf4-44a4-87b4-d3f65a765d48">
 
  
 ## Table of Contents
@@ -12,11 +13,14 @@
 - [Feedback](##Feedback)
 
 
-<img width="100" alt="leet-logo" src="https://github.com/prakharraj1302/LeeTracker-Android-App/assets/78600377/5c39cf98-3982-48eb-97e1-e6b91944439c">
 
 
 ## Overview
 LeetCode Friends Tracker is an Android app designed to enhance your coding practice experience by keeping you motivated, informed, and connected with your friends on LeetCode. This app leverages the LeetCode API to provide personalized notifications about your friends' submissions and allows you to track your coding progress over time.
+
+### Screenshots
+<img width="1035" alt="leetracker" src="https://github.com/prakharraj1302/LeeTracker-Android-App/assets/78600377/64d1ee0f-670a-43fc-a653-6dcdf122730c">
+
 
 
 
