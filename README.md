@@ -28,9 +28,6 @@ LeetCode Friends Tracker is an Android app designed to enhance your coding pract
 ## Features
 
 - **Personalized Notifications**: Receive real-time notifications whenever your friends submit solutions on LeetCode, creating a sense of friendly competition and motivation.
-
-- **Progress Tracking**: Visualize your coding journey with interactive progress graphs. Monitor your performance and compare it with your friends' achievements.
-
 - **Engaging User Interface**: A user-friendly interface with Material Design elements ensures an intuitive and enjoyable user experience.
 
 ## Installation
