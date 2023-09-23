@@ -12,7 +12,7 @@
 - [Feedback](##Feedback)
 
 
-<img width="411" alt="leet-logo" src="https://github.com/prakharraj1302/LeeTracker-Android-App/assets/78600377/5c39cf98-3982-48eb-97e1-e6b91944439c">
+<img width="100" alt="leet-logo" src="https://github.com/prakharraj1302/LeeTracker-Android-App/assets/78600377/5c39cf98-3982-48eb-97e1-e6b91944439c">
 
 
 ## Overview
