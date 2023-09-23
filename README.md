@@ -39,19 +39,21 @@ LeetCode Friends Tracker is an Android app designed to enhance your coding pract
 
 ## Usage
 
-- Upon launching the app, log in to your LeetCode account.
-- Add your friends by searching for their LeetCode usernames.
-- Start receiving notifications about your friends' submissions and track your progress.
+-  To add a new user Enter the username and click "Add."
+- The list will display the entered username if it exists.
+- To enable/disable app notifications, use the 'Notification
+ON/OFF' button.
+- Use the 'Notify button to control an individual's notification.
 - Explore the app's features to stay motivated and improve your coding skills.
 
 ## TechStack
 
 - **Programming Language**: React Native, JS, Expo
-- **IDE**: Android Studio
+- **IDE**: Android Studio, Expo Snack
 
 ## Contributors
 
-- [Prakhar Raj](https://github.com/pete1302)
+- [Prakhar Raj](https://github.com/prakharraj1302)
 - [Gaurav Garwa](https://github.com/gaurav1832)
 
 ## Feedback and Contributions
