@@ -1,6 +1,6 @@
 # LeeTracker Android App
 
-<img width="100" alt="leet-logo-removebg-preview" src="https://github.com/prakharraj1302/LeeTracker-Android-App/assets/78600377/42ad8be9-2bf4-44a4-87b4-d3f65a765d48">
+![MicrosoftTeams-image (12)](https://github.com/prakharraj1302/LeeTracker-Android-App/assets/78600377/934e43da-b167-446d-881b-80aca85b892c)
 
  
 ## Table of Contents
