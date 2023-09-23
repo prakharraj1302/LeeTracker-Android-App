@@ -1,6 +1,7 @@
 # LeeTracker Android App
 
-![MicrosoftTeams-image (12)](https://github.com/prakharraj1302/LeeTracker-Android-App/assets/78600377/934e43da-b167-446d-881b-80aca85b892c)
+<img width="100" alt="logo" src="https://github.com/prakharraj1302/LeeTracker-Android-App/assets/78600377/934e43da-b167-446d-881b-80aca85b892c">
+
 
  
 ## Table of Contents
