@@ -4,13 +4,13 @@
 
  
 ## Table of Contents
-- [Overview](##Overview)
-- [Features](##Features)
-- [Installation](##Installation)
-- [Usage](##Usage)
-- [TechStack](##TechStack)
-- [Contributors ](##Contributors)
-- [Feedback](##Feedback)
+- [Overview](#Overview)
+- [Features](#Features)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [TechStack](#TechStack)
+- [Contributors ](#Contributors)
+- [Feedback](#Feedback)
 
 
 
@@ -34,7 +34,7 @@ LeetCode Friends Tracker is an Android app designed to enhance your coding pract
 
 ## Installation
 
-1. Download the app: [`git clone https://github.com/yourusername/leetcode-friends-tracker.git`](https://play.google.com/store/apps/details?id=com.pete1302.leethub01)
+1. Download the app: https://play.google.com/store/apps/details?id=com.pete1302.leethub01 
 
 
 ## Usage
