@@ -15,7 +15,6 @@
 
 
 
-
 ## Overview
 LeetCode Friends Tracker is an Android app designed to enhance your coding practice experience by keeping you motivated, informed, and connected with your friends on LeetCode. This app leverages the LeetCode API to provide personalized notifications about your friends' submissions and allows you to track your coding progress over time.
 
@@ -45,7 +44,7 @@ ON/OFF' button.
 
 ## TechStack
 
-- **Programming Language**: React Native, JS, Expo
+- **Programming Language**: React Native, JS, Expo, GraphQL
 - **IDE**: Android Studio, Expo Snack
 
 ## Contributors
