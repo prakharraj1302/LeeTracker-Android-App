@@ -1,8 +1,7 @@
 # LeeTracker Android App
-
+<center> 
 <img width="100" alt="logo" src="https://github.com/prakharraj1302/LeeTracker-Android-App/assets/78600377/934e43da-b167-446d-881b-80aca85b892c">
-
-
+</center>
  
 ## Table of Contents
 - [Overview](#Overview)
